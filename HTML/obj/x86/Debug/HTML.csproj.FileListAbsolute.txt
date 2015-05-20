@@ -33,3 +33,12 @@ C:\Users\Евгения\Desktop\Курсы\HTML\obj\x86\Debug\HTML.Form1.resourc
 C:\Users\Евгения\Desktop\Курсы\HTML\obj\x86\Debug\HTML.Properties.Resources.resources
 C:\Users\Евгения\Desktop\Курсы\HTML\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Евгения\Desktop\Курсы\HTML\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\HomeworkGit\HTML\obj\x86\Debug\HTML.exe
+D:\HomeworkGit\HTML\obj\x86\Debug\HTML.pdb
+D:\HomeworkGit\HTML\bin\Debug\HTML.exe
+D:\HomeworkGit\HTML\bin\Debug\HTML.pdb
+D:\HomeworkGit\HTML\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\HomeworkGit\HTML\obj\x86\Debug\HTML.Form1.resources
+D:\HomeworkGit\HTML\obj\x86\Debug\HTML.Properties.Resources.resources
+D:\HomeworkGit\HTML\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\HomeworkGit\HTML\obj\x86\Debug\GenerateResource.write.1.tlog

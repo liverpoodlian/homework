@@ -56,29 +56,32 @@ namespace HTML
                     {
                         string result = "";
                         int count = 0, numb = 0; //count - отсчет строк в файле, numb - имя файла html
-                        List<string> vocabulary = new List<string>();
+                        string[] vocabulary = new string[File.ReadAllLines(textBox2.Text).Length];
+                        //List<string> vocabulary = new List<string>();
                         using (StreamReader file_vocabulary = new StreamReader(textBox2.Text, Encoding.Default))
                         {
                             while (!file_vocabulary.EndOfStream)
                             {
-                                vocabulary.Add(file_vocabulary.ReadLine());
+                                vocabulary[count]=file_vocabulary.ReadLine();
+                                count++;
                             }
+                            count = 0;
                         }
                         System.IO.Directory.CreateDirectory(Application.StartupPath + '\\' + textBox3.Text);
                         string path = Application.StartupPath + '\\' + textBox3.Text + '\\' + numb.ToString() + ".html";
                         try
                         {
-                            var HtmlResult = new List<string>();
+                            string[] HtmlResult = new string[File.ReadAllLines(textBox1.Text).Length];
                             using (StreamReader text = new StreamReader(textBox1.Text, Encoding.Default))
                             {
-                                var ListSplitter = new List<char> { ' ' , ',' , '!' , '?', '.' , ':' , ';', '(', ')', '+', '*' };
+                                char[] Splitter = new char[] { ' ' , ',' , '!' , '?', '.' , ':' , ';', '(', ')', '+', '*' };
                                 while (!text.EndOfStream)
                                 {
                                         var word = "";
                                         var str = text.ReadLine();
                                         for (int i = 0; i < str.Length; i++)
                                         {
-                                            if (!ListSplitter.Any(s=>s==str[i]))
+                                            if (!Splitter.Any(s=>s==str[i]))
                                                 word += str[i];
                                             else
                                             {
@@ -96,12 +99,14 @@ namespace HTML
                                         }
                                         if (str == "")
                                             result = "<br>";
-                                        HtmlResult.Add(result);
+                                        HtmlResult[count]=result;
                                         result = "";
+                                        count++;
                                 }
+                                count = 0;
                             }
                             var eatenString = "";
-                                for (var i = 0; i < HtmlResult.Count; i++)
+                                for (var i = 0; i < HtmlResult.Length; i++)
                                 {
                                     StreamWriter writeFile = new StreamWriter(path, true, Encoding.Default);
                                     if (count != Convert.ToInt32(textBox3.Text))
