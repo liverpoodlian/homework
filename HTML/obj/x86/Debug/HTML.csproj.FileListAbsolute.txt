@@ -1,0 +1,28 @@
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\bin\Debug\HTML.exe
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\bin\Debug\HTML.pdb
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\HTML.Form1.resources
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\HTML.Properties.Resources.resources
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\HTML.exe
+C:\Users\023585\AppData\Local\Temporary Projects\HTML\obj\x86\Debug\HTML.pdb
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\HTML.exe
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\HTML.pdb
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\bin\Debug\HTML.exe
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\bin\Debug\HTML.pdb
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\HTML.Form1.resources
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\HTML.Properties.Resources.resources
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\023585\documents\visual studio 2010\Projects\HTML\HTML\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Владислав\Desktop\HTML\HTML\obj\x86\Debug\HTML.exe
+C:\Users\Владислав\Desktop\HTML\HTML\obj\x86\Debug\HTML.pdb
+C:\Users\Владислав\Desktop\HTML\HTML\bin\Debug\HTML.exe
+C:\Users\Владислав\Desktop\HTML\HTML\bin\Debug\HTML.pdb
+C:\Users\Владислав\Desktop\HTML\HTML\obj\x86\Debug\HTML.Form1.resources
+C:\Users\Владислав\Desktop\HTML\HTML\obj\x86\Debug\HTML.Properties.Resources.resources
+C:\Users\Владислав\Desktop\HTML\HTML\obj\x86\Debug\HTML.csproj.GenerateResource.Cache
+C:\Users\Владислав\Desktop\HTML\HTML\obj\x86\Debug\HTML.csprojResolveAssemblyReference.cache
+C:\Users\Евгения\Desktop\Курсы\HTML\obj\x86\Debug\HTML.exe
+C:\Users\Евгения\Desktop\Курсы\HTML\obj\x86\Debug\HTML.pdb
