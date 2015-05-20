@@ -54,65 +54,77 @@ namespace HTML
                 {
                     if (textBox3.Text != "")
                     {
-                        string str = "", word = "", result = "";
-                        char symbol;
+                        string result = "";
                         int count = 0, numb = 0; //count - отсчет строк в файле, numb - имя файла html
                         List<string> vocabulary = new List<string>();
-                        StreamReader file_vocabulary = new StreamReader(textBox2.Text, Encoding.Default);
-                        while (!file_vocabulary.EndOfStream)
+                        using (StreamReader file_vocabulary = new StreamReader(textBox2.Text, Encoding.Default))
                         {
+                            while (!file_vocabulary.EndOfStream)
+                            {
                                 vocabulary.Add(file_vocabulary.ReadLine());
+                            }
                         }
-                        StreamReader file_text = new StreamReader(textBox1.Text, Encoding.Default);
                         System.IO.Directory.CreateDirectory(Application.StartupPath + '\\' + textBox3.Text);
                         string path = Application.StartupPath + '\\' + textBox3.Text + '\\' + numb.ToString() + ".html";
-                        StreamWriter html = new StreamWriter(path, true, Encoding.Default);
                         try
                         {
-                            while (!file_text.EndOfStream)
+                            var HtmlResult = new List<string>();
+                            using (StreamReader text = new StreamReader(textBox1.Text, Encoding.Default))
                             {
-                                if (count != Convert.ToInt32(textBox3.Text))
+                                var ListSplitter = new List<char> { ' ' , ',' , '!' , '?', '.' , ':' , ';', '(', ')', '+', '*' };
+                                while (!text.EndOfStream)
                                 {
-                                    str = file_text.ReadLine();
-                                    for (int i = 0; i < str.Length; i++)
-                                    {
-                                        if (str[i] != ' ' & str[i] != ',' & str[i] != '!' & str[i] != '?' & str[i] != '.' & str[i] != ':' & str[i] != ';' & str[i] != '-')
-                                            word += str[i];
-                                        else
+                                        var word = "";
+                                        var str = text.ReadLine();
+                                        for (int i = 0; i < str.Length; i++)
                                         {
-                                            symbol = str[i];
-                                            if (vocabulary.Contains(word))
-                                                result += "<b><i>" + word + @"</b></i>" + symbol;
+                                            if (!ListSplitter.Any(s=>s==str[i]))
+                                                word += str[i];
                                             else
-                                                result += word + symbol;
-                                            word = "";
+                                            {
+                                                if (vocabulary.Any(w=>w==word))
+                                                    result += "<b><i>" + word + @"</b></i>" + str[i];
+                                                else
+                                                    result += word + str[i];
+                                                word = "";
+                                            }
+                                            if (i + 1 == str.Length)
+                                            {
+                                                result += word + "<br>";
+                                                word = "";
+                                            }
                                         }
-                                        if (i + 1 == str.Length)
-                                        {
-                                            result += word + "<br>";
-                                            word = "";
-                                        }
-                                    }
-                                    if (str == "")
-                                        result = "<br>";
-                                    if (numb == 0)
-                                        html.WriteLine(result);
-                                    else
-                                        File.AppendAllText(path, result, Encoding.Default);
-                                    count++;
-                                    result = "";
-                                }
-                                else
-                                {
-                                    numb++;
-                                    path = Application.StartupPath + '\\' + textBox3.Text + '\\' + numb.ToString() + ".html";
-                                    count = 0;
+                                        if (str == "")
+                                            result = "<br>";
+                                        HtmlResult.Add(result);
+                                        result = "";
                                 }
                             }
-                            html.Close();
-                            MessageBox.Show("Готово!");
+                            var eatenString = "";
+                                for (var i = 0; i < HtmlResult.Count; i++)
+                                {
+                                    StreamWriter writeFile = new StreamWriter(path, true, Encoding.Default);
+                                    if (count != Convert.ToInt32(textBox3.Text))
+                                    {
+                                        count++;
+                                        if (eatenString != "")
+                                        {
+                                            writeFile.WriteLine(eatenString);
+                                            eatenString = "";
+                                        }
+                                        writeFile.WriteLine(HtmlResult[i]);
+                                    }
+                                    else
+                                    {
+                                        eatenString = HtmlResult[i];
+                                        numb++;
+                                        count = 0;
+                                        path = Application.StartupPath + '\\' + textBox3.Text + '\\' + numb.ToString() + ".html";
+                                    }
+                                    writeFile.Close();
+                                }
                         }
-                        catch (Exception ee)
+                        catch(Exception ee)
                         {
                             MessageBox.Show("В ходе выполнения программы произошла ошибка: " + ee.ToString());
                         }
